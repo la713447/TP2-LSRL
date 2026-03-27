@@ -17,11 +17,6 @@ public class OuvrageAudio extends Ouvrage{
         super(titre, auteur);
     }
 
-    public enum Format {
-        NUMERIQUE, ANALOGIQUE
-    }
-
-
     public int getDureeMinute() {
         return dureeMinute;
     }
