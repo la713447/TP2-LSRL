@@ -6,6 +6,7 @@ import java.util.List;
 import livres.Ouvrage;
 import livres.Auteur;
 import livres.Pays;
+import livres.Serie;
 
 /**
  * CoursPOO 1
@@ -19,6 +20,7 @@ public class TestOuvrage {
         TestOuvrage test = new TestOuvrage();
         test.testOuvrages();
         test.testTrouver();
+        test.testPays();
     }
 
 
@@ -103,6 +105,26 @@ public class TestOuvrage {
         System.out.println("Livres de Jacques: " + resultat);
     }
 
+    private void testPays() {
+        System.out.println("\n-----Test de la classe Pays-----------");
+
+        // Pays valide
+        Pays canada = new Pays("Canada", "CAN");
+
+        // Lier à un auteur existant
+        Auteur albertine = new Auteur("Albertine", "Tremblay", canada);
+        System.out.println(albertine.getPrenom() + " vient de "
+                + albertine.getPaysOrigine().getNom()
+                + " (" + albertine.getPaysOrigine().getCode() + ")");
+
+        // Code invalide
+        try {
+            Pays invalide = new Pays("France", "fra"); // invalide
+            System.out.println("ERREUR: code invalide accepté ");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Code invalide refusé ✔️");
+        }
+    }
 
 }
 
