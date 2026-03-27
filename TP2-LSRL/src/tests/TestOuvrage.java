@@ -20,6 +20,7 @@ public class TestOuvrage {
         TestOuvrage test = new TestOuvrage();
         test.testOuvrages();
         test.testTrouver();
+        test.testSerie();
         test.testPays();
     }
 
@@ -125,6 +126,30 @@ public class TestOuvrage {
             System.out.println("Code invalide refusé ✔️");
         }
     }
+
+
+    private void testSerie() {
+        System.out.println("\n-----Test de la classe Serie-----------");
+
+        Pays canada = new Pays("Canada", "CAN");
+        Auteur albertine = new Auteur("Albertine", "Tremblay", canada);
+
+        Ouvrage livre1 = new Ouvrage("Titre 1", albertine);
+        Ouvrage livre2 = new Ouvrage("Titre 2", albertine);
+
+
+        Serie serie = new Serie("Ma série");
+
+
+        serie.ajouterOuvrage(livre1);
+        serie.ajouterOuvrage(livre2);
+        System.out.println("Après ajout : " + serie.getListeOuvrage());
+
+
+        serie.enleverOuvrage(livre1);
+        System.out.println("Après suppression : " + serie.getListeOuvrage());
+    }
+
 
 }
 
