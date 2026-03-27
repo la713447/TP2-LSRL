@@ -6,11 +6,11 @@ public class OuvrageVideo extends Ouvrage{
     double dureeMinute;
     int tailleMB;
 
-    public OuvrageVideo(String titre, Auteur auteur, Format type, LocalDate date, int nombreExemplaires) {
+    public OuvrageVideo(String titre, Auteur auteur, Ouvrage.Format type, LocalDate date, int nombreExemplaires) {
         super(titre, auteur, type, date, nombreExemplaires);
     }
 
-    public OuvrageVideo(String titre, Auteur auteur, Format type) {
+    public OuvrageVideo(String titre, Auteur auteur, Ouvrage.Format type) {
         super(titre, auteur, type);
     }
 
